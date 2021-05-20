@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>account.png</file>
+        <file>library.png</file>
+        <file>password.png</file>
+        <file>name.png</file>
+        <file>num.png</file>
+        <file>sex.png</file>
+        <file>forget.png</file>
+        <file>register.png</file>
+    </qresource>
+</RCC>

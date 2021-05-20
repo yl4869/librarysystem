@@ -1,0 +1,4 @@
+/home/yunlang/QT/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/yunlang/QT/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/yunlang/QT/cmake-build-debug/CMakeFiles/QT.dir
+/home/yunlang/QT/cmake-build-debug/CMakeFiles/QT_autogen.dir

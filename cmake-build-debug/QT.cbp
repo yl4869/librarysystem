@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="QT"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\usr\;CMake Files\..\..\..\usr\lib\;CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\;CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Widgets\;CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\;CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/yunlang/QT/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/yunlang/QT/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/yunlang/QT/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/yunlang/QT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/yunlang/QT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/yunlang/QT/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/yunlang/QT/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/yunlang/QT/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/yunlang/QT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/yunlang/QT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/yunlang/QT/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/yunlang/QT/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/yunlang/QT/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/yunlang/QT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/yunlang/QT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="QT">
+				<Option output="/home/yunlang/QT/cmake-build-debug/QT" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/yunlang/QT/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/yunlang/QT/cmake-build-debug/QT_autogen/include"/>
+					<Add directory="/home/yunlang/QT/."/>
+					<Add directory="/home/yunlang/QT/project"/>
+					<Add directory="/home/yunlang/QT/project/librarysystem"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/yunlang/QT/cmake-build-debug/Makefile&quot;  VERBOSE=1 QT"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/yunlang/QT/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/yunlang/QT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/yunlang/QT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="QT/fast">
+				<Option output="/home/yunlang/QT/cmake-build-debug/QT" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/yunlang/QT/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/yunlang/QT/cmake-build-debug/QT_autogen/include"/>
+					<Add directory="/home/yunlang/QT/."/>
+					<Add directory="/home/yunlang/QT/project"/>
+					<Add directory="/home/yunlang/QT/project/librarysystem"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/yunlang/QT/cmake-build-debug/Makefile&quot;  VERBOSE=1 QT/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/yunlang/QT/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/yunlang/QT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/yunlang/QT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="QT_autogen">
+				<Option working_dir="/home/yunlang/QT/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/yunlang/QT/cmake-build-debug/Makefile&quot;  VERBOSE=1 QT_autogen"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/yunlang/QT/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/yunlang/QT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/yunlang/QT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/yunlang/QT/cmake-build-debug/QT_autogen/mocs_compilation.cpp">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/cpp_re.cpp">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/cpp_re.h">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/forget.cpp">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/forget.h">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/forget.ui">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/home.cpp">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/home.h">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/home.ui">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/library.cpp">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/library.h">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/library.ui">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/main.cpp">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/manage.cpp">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/manage.h">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/newbook.cpp">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/newbook.h">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/newbook.ui">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/newmanage.cpp">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/newmanage.h">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/newmanage.ui">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/project/librarysystem/Book.cpp">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/project/librarysystem/Book.h">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/project/librarysystem/Bookrecord.cpp">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/project/librarysystem/Bookrecord.h">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/project/librarysystem/Chinese.cpp">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/project/librarysystem/Chinese.h">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/project/librarysystem/Date.cpp">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/project/librarysystem/Date.h">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/project/librarysystem/File.cpp">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/project/librarysystem/File.h">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/project/librarysystem/Ladmin.cpp">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/project/librarysystem/Ladmin.h">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/project/librarysystem/Manager.cpp">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/project/librarysystem/Manager.h">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/project/librarysystem/Menu.cpp">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/project/librarysystem/Menu.h">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/project/librarysystem/Reader.cpp">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/project/librarysystem/Reader.h">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/project/librarysystem/User.cpp">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/project/librarysystem/User.h">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/re_account.cpp">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/re_account.h">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/re_account.ui">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/re_admin.cpp">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/re_admin.h">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/re_admin.ui">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/re_book.cpp">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/re_book.h">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/re_book.ui">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/register_qt.cpp">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/register_qt.h">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/register_qt.ui">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/rent.cpp">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/rent.h">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/rent.ui">
+			<Option target="QT"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QComposePlatformInputContextPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSEmulatorIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSKmsEglDeviceIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSKmsGbmIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSX11IntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevKeyboardPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevMousePlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevTabletPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevTouchScreenPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QIbusPlatformInputContextPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QLibInputPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QLinuxFbIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QMinimalEglIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QVncIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbEglIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbGlxIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/yunlang/QT/../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreMacros.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
