@@ -336,9 +336,9 @@ void Manage::showbookline3(Book* b,int i)
   model3->setItem(i,2,new QStandardItem(QString::fromStdString(b->GetBookWriter())));
   model3->setItem(i,3,new QStandardItem(QString::fromStdString(b->GetBookPublisher())));
   model3->setItem(i,4,new QStandardItem(QString::fromStdString(b->GetBookField())));
-  QString year = QString::number(b->m_indate.Ryear());
-  QString month = QString::number(b->m_indate.Rmonth());
-  QString day = QString::number(b->m_indate.Rday());
+  QString year = QString::number(b->GetInDate().Ryear());
+  QString month = QString::number(b->GetInDate().Rmonth());
+  QString day = QString::number(b->GetInDate().Rday());
   QString data = QString("%1/%2/%3").arg(year).arg(month).arg(day);
   model3->setItem(i,5,new QStandardItem(data));
   model3->setItem(i,7,new QStandardItem(QString::number(b->GetBookLeftnum())));

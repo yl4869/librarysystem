@@ -185,9 +185,9 @@ void Home::showbookline1(Book *b, int i)
   model1->setItem(i,2,new QStandardItem(QString::fromStdString(b->GetBookWriter())));
   model1->setItem(i,3,new QStandardItem(QString::fromStdString(b->GetBookPublisher())));
   model1->setItem(i,4,new QStandardItem(QString::fromStdString(b->GetBookField())));
-  QString year = QString::number(b->m_indate.Ryear());
-  QString month = QString::number(b->m_indate.Rmonth());
-  QString day = QString::number(b->m_indate.Rday());
+  QString year = QString::number(b->GetInDate().Ryear());
+  QString month = QString::number(b->GetInDate().Rmonth());
+  QString day = QString::number(b->GetInDate().Rday());
   QString data = QString("%1/%2/%3").arg(year).arg(month).arg(day);
   model1->setItem(i,5,new QStandardItem(data));
   model1->setItem(i,6,new QStandardItem(QString::number(b->GetBookLeftnum())));
@@ -197,14 +197,14 @@ void Home::showbookline1(Book *b, int i)
 
 void Home::showbookline2(Bookrecord *b, int i)
 {
-  model2->setItem(i,0,new QStandardItem(QString::fromStdString(b->m_id)));
-  model2->setItem(i,1,new QStandardItem(QString::fromStdString(b->m_name)));
-  model2->setItem(i,2,new QStandardItem(QString::fromStdString(b->m_writer)));
-  model2->setItem(i,3,new QStandardItem(QString::fromStdString(b->m_publisher)));
-  model2->setItem(i,4,new QStandardItem(QString::fromStdString(b->m_field)));
-  QString byear = QString::number(b->m_bdate.Ryear()),ryear = QString::number(b->m_rdate.Ryear());
-  QString bmonth = QString::number(b->m_bdate.Rmonth()),rmonth = QString::number(b->m_rdate.Rmonth());
-  QString bday = QString::number(b->m_bdate.Rday()),rday = QString::number(b->m_rdate.Rday());
+  model2->setItem(i,0,new QStandardItem(QString::fromStdString(b->GetID())));
+  model2->setItem(i,1,new QStandardItem(QString::fromStdString(b->GetName())));
+  model2->setItem(i,2,new QStandardItem(QString::fromStdString(b->GetWriter())));
+  model2->setItem(i,3,new QStandardItem(QString::fromStdString(b->GetPublisher())));
+  model2->setItem(i,4,new QStandardItem(QString::fromStdString(b->GetField())));
+  QString byear = QString::number(b->GetBDate().Ryear()),ryear = QString::number(b->GetRDate().Ryear());
+  QString bmonth = QString::number(b->GetBDate().Rmonth()),rmonth = QString::number(b->GetRDate().Rmonth());
+  QString bday = QString::number(b->GetBDate().Rday()),rday = QString::number(b->GetRDate().Rday());
   QString bdata = QString("%1/%2/%3").arg(byear).arg(bmonth).arg(bday);
   QString rdata = QString("%1/%2/%3").arg(ryear).arg(rmonth).arg(rday);
   model2->setItem(i,5,new QStandardItem(bdata));
