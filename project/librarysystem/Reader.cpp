@@ -39,26 +39,20 @@ Reader::Reader(string id, string name, string psw, int sex, bool borrow_able, in
 }
 void Reader::CheckRecord() {
     int flag = 1;
-    for(Bookrecord &b: record) {
-        if(b.GetOutdate() == 1) {
-            flag = 0;
+    if(record.size() !=0) {
+        for(Bookrecord &b: record) {
+            if(b.GetOutdate() == 1) {
+                qDebug() << "dsa";
+                flag = 0;
+            }
         }
-    }
-    if( m_borrow_number == 10 ) {
+      }
+    if( m_borrow_number == 0 ) {
         flag = 0;
     }
     m_borrow_able = flag;
 }
-/*void Reader::FlushRecord() {
-    string s  = GetName()+".data";
-    ofstream fout;
-    fout.open(s.c_str());
-    for(auto i = record.begin(); i != record.end(); i++) {
-        fout << i->m_id << " " << i->m_name << " " << i->m_writer << " " << i->m_bdate.Ryear() << " " << i->m_bdate.Rmonth()  << i->m_bdate.Rday() << " " << i->m_rdate.Ryear() << " " << i->m_rdate.Rmonth() << " " << i->m_rdate.Rday() << endl;
-    }
-    fout.close();
-    return;
-}*/
+
 bool Reader::FindBook(string name) {
     //Manager::FindBookName(name);
 }

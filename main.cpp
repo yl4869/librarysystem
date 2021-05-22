@@ -14,20 +14,7 @@ int main(int argc, char *argv[])
     w.show();
     return a.exec();
 }
-void Flush() {
-  File f;
-  f.Init();
-  f.LoadBook(Manager::booklist);
-  f.LoadAdmin(Manager::ladminlist);
-  f.LoadReader(Manager::readerlist);
-}
-void Load() {
-  File f;
-  f.Init();
-  f.LoadBook(Manager::booklist);
-  f.LoadAdmin(Manager::ladminlist);
-  f.LoadReader(Manager::readerlist);
-}
+
 /*#include <iostream>
 #include <string>
 #include "Manager.h"

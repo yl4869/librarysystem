@@ -16,7 +16,7 @@ Newmanage::~Newmanage()
 
 void Newmanage::on_pushButton_clicked()
 {
-  if(ui->lineEdit_2->text()!=ui->lineEdit_3->text())
+   if(ui->lineEdit_2->text()!=ui->lineEdit_3->text())
     {
       QMessageBox *msgbox = new QMessageBox(this);
       msgbox->information(this,"提示","两次密码不同，请重新输入！");
@@ -25,13 +25,19 @@ void Newmanage::on_pushButton_clicked()
       ui->lineEdit_3->clear();
       ui->lineEdit->setFocus();
     }
-  else
+  else if(Manager::AddAdmin(ui->lineEdit->text().toStdString(),ui->lineEdit_4->text().toStdString(),ui->lineEdit_2->text().toStdString(),ui->comboBox->currentIndex()))
     {
-      Manager::AddAdmin(ui->lineEdit->text().toStdString(),ui->lineEdit_4->text().toStdString(),ui->lineEdit_2->text().toStdString(),ui->comboBox->currentIndex());
       QMessageBox *msgbox = new QMessageBox(this);
       msgbox->information(this,"提示","注册成功，请点击显示全表以查看！");
       save();
       this->close();
 
     }
+   else
+     {
+       QMessageBox *msgbox = new QMessageBox(this);
+       msgbox->information(this,"提示","此管理员账号已被注册，请重新输入！");
+       ui->lineEdit->clear();
+       ui->lineEdit->setFocus();
+     }
 }

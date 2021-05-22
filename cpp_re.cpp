@@ -5,6 +5,18 @@ Cpp_re::Cpp_re(QWidget *parent) : QWidget(parent)
 
 }
 
+
+void save()
+{
+  File::FlushBook(Manager::booklist);
+  File::FlushAdmin(Manager::ladminlist);
+  File::FlushReader(Manager::readerlist);
+  if(mainreader != NULL)
+    {
+      File::FlushRecord(*mainreader,mainreader->GetRecord());
+    }
+}
+
 //bool Cpp_re::Rebook(Book* book0,string id, string name, string writer, string publisher,int num)
 //{
 //  book0->Re_BookID(id);
@@ -31,14 +43,3 @@ Cpp_re::Cpp_re(QWidget *parent) : QWidget(parent)
 //  ladmin0->Re_psw(psw);
 //  return true;
 //}
-
-void save()
-{
-  File::FlushBook(Manager::booklist);
-  File::FlushAdmin(Manager::ladminlist);
-  File::FlushReader(Manager::readerlist);
-  if(mainreader != NULL)
-    {
-      File::FlushRecord(*mainreader,mainreader->GetRecord());
-    }
-}

@@ -316,6 +316,9 @@ bool Manager::ResetBookLeftnum(string id, int leftnum) {
     }
     return flag;
 }
+
+
+
 //void Manager::FindBookField(Home* home,string field) {
 //    int n = field.length();
 //    for(Book &b : booklist) {

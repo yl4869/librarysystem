@@ -319,6 +319,8 @@ void Home::on_lineEdit_returnPressed()
 void Home::on_pushButton_clicked()
 {
     mainreader->pay();
+    for(auto i = mainreader->GetRecord().begin();i!=mainreader->GetRecord().end(); i++) { i->CheckRecord(); }
+    mainreader->CheckRecord();
     save();
     ui->pushButton->hide();
     for(auto i = mainreader->GetRecord().begin();i!=mainreader->GetRecord().end(); i++) { i->CheckRecord(); }
