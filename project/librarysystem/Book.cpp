@@ -44,6 +44,7 @@ Book::Book(string id, string name, string writer, string publisher,int num,strin
     m_writer = writer;
     m_publisher = publisher;
     m_totalnum = num;
+    m_leftnum = num;
     m_field = field;
 }
 //

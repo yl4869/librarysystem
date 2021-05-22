@@ -33,6 +33,7 @@ void register_qt::on_btn_register_clicked()
       Manager::AddReader(ui->re_num->text().toStdString(),ui->re_name->text().toStdString(),ui->re_password1->text().toStdString(),ui->re_sex->currentIndex());
       QMessageBox *msgbox = new QMessageBox(this);
       msgbox->information(this,"提示","注册成功！");
+      save();
       this->close();
 
     }

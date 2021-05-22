@@ -17,18 +17,20 @@ private:
     Date m_bdate;
     Date m_rdate;
     bool outdate;
+    int m_no;
 public:
     string GetID();
     string GetName();
     string GetWriter();
     string GetPublisher();
     string GetField();
+    int GetNo();
     Date& GetBDate();
     Date& GetRDate();
     void CheckRecord();
     bool GetOutdate();
     Bookrecord();
     ~Bookrecord();
-    Bookrecord(string id,string name,string writer,int byear,int bmonth,int bday,int ryear,int rmonth,int rday,string publisher,string field);
+    Bookrecord(string id,string name,string writer,int byear,int bmonth,int bday,int ryear,int rmonth,int rday,string publisher,string field,int no);
 };
 #endif //LIBRARYSYSTEM_BOOKRECORD_H

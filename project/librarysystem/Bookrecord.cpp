@@ -14,14 +14,16 @@ void Bookrecord::CheckRecord() {
 }
 Bookrecord::Bookrecord() = default;
 Bookrecord::~Bookrecord() = default;
-Bookrecord::Bookrecord(string id,string name,string writer,int byear,int bmonth,int bday,int ryear,int rmonth,int rday,string publisher,string field) : m_bdate(byear,bmonth,bday),m_rdate(ryear,rmonth,rday) {
+Bookrecord::Bookrecord(string id,string name,string writer,int byear,int bmonth,int bday,int ryear,int rmonth,int rday,string publisher,string field,int no) : m_bdate(byear,bmonth,bday),m_rdate(ryear,rmonth,rday) {
     m_id = id;
     m_name = name;
     m_writer = writer;
     m_publisher = publisher;
     m_field = field;
     outdate = 0;
+    m_no = no;
 }
+int Bookrecord::GetNo() { return m_no; }
 bool Bookrecord::GetOutdate() { return outdate; }
 //
 // Created by yunlang on 2021/5/17.

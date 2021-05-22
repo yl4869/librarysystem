@@ -31,3 +31,14 @@ Cpp_re::Cpp_re(QWidget *parent) : QWidget(parent)
 //  ladmin0->Re_psw(psw);
 //  return true;
 //}
+
+void save()
+{
+  File::FlushBook(Manager::booklist);
+  File::FlushAdmin(Manager::ladminlist);
+  File::FlushReader(Manager::readerlist);
+  if(mainreader != NULL)
+    {
+      File::FlushRecord(*mainreader,mainreader->GetRecord());
+    }
+}

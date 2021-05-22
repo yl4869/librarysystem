@@ -8,6 +8,8 @@
 #include <QDebug>
 #include "re_book.h"
 #include "re_account.h"
+#include "re_admin.h"
+#include "library.h"
 namespace Ui {
 class Manage;
 }
@@ -22,6 +24,9 @@ public:
     void showbookline3(Book* b,int i);
     void showreaderline4(Reader* b,int i);
     void showadminline5(Ladmin* b,int i);
+    QStandardItemModel* model3;
+    QStandardItemModel* model4;
+    QStandardItemModel* model5;
 
 private slots:
     void on_btn_add_clicked();
@@ -57,11 +62,15 @@ private slots:
 
     void on_btn_exit_clicked();
 
+    void on_lineEdit_2_returnPressed();
+
+    void on_lineEdit_4_returnPressed();
+
+    void on_lineEdit_returnPressed();
+
 private:
     Ui::Manage *ui;
-    QStandardItemModel* model3;
-    QStandardItemModel* model4;
-    QStandardItemModel* model5;
+
 };
 
 #endif // MANAGE_H

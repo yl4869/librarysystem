@@ -16,5 +16,5 @@ public:
 signals:
 
 };
-
+void save();
 #endif // CPP_RE_H

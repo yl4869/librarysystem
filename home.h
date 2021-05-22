@@ -22,7 +22,6 @@ public:
     void showbookline1(Book *b, int i);
     void showbookline2(Bookrecord *b, int i);
 
-
 private slots:
 
     void on_btn_ok_clicked();
@@ -35,6 +34,10 @@ private slots:
     void on_btn_search_clicked();
 
     void on_btn_exit_clicked();
+
+    void on_lineEdit_returnPressed();
+
+    void on_pushButton_clicked();
 
 private:
     Ui::Home *ui;

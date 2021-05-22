@@ -16,21 +16,27 @@ Re_account::~Re_account()
 {
     delete ui;
 }
-void Re_account::get(QString a,QString b,int sex,QString d)
+void Re_account::get(Reader* re,QString b,int sex,QString d)
 {
-    ui->lineEdit_1->setText(a);
+    old = re;
     ui->lineEdit_2->setText(b);
     ui->lineEdit_4->setText(d);
     ui->comboBox->setCurrentIndex(sex);
+    for(Bookrecord &b : re->GetRecord()) {
+          ui->comboBox_2->addItem(QString::fromStdString(b.GetName()));
+        }
     //ui->comboBox_2->addItem(f);
 
 }
 
 void Re_account::on_btn_save_clicked()
 {
-
+  old->SetPsw(ui->lineEdit_4->text().toStdString());
+  old->SetName(ui->lineEdit_2->text().toStdString());
+  old->SetSex(ui->comboBox->currentIndex());
   QMessageBox *msgbox = new QMessageBox(this);
-  msgbox->information(this,"提示","修改成功！");
+  msgbox->information(this,"提示","修改成功，请点击显示全表以查看！");
+  save();
   this->close();
 }
 

@@ -5,6 +5,7 @@
 #include "project/librarysystem/Manager.h"
 #include "cpp_re.h"
 #include <QMessageBox>
+#include "manage.h"
 namespace Ui {
 class Re_account;
 }
@@ -16,7 +17,7 @@ class Re_account : public QWidget
 public:
     explicit Re_account(QWidget *parent = nullptr);
     ~Re_account();
-    void get(QString a,QString b,int sex,QString d);
+    void get(Reader* re,QString b,int sex,QString d);
 
 private slots:
     void on_btn_save_clicked();

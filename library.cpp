@@ -33,6 +33,7 @@ void library::on_btn_login_clicked()
             ui->line_account->setFocus();
             QMessageBox *msgbox = new QMessageBox(this);
             msgbox->information(this,"提示","密码或用户名错误，请重新输入！");
+            qDebug()<<"00";
           }
         else if(mainreader->GetPsw() != ui->line_password->text().toStdString())
           {
@@ -42,10 +43,12 @@ void library::on_btn_login_clicked()
             ui->line_account->setFocus();
             QMessageBox *msgbox = new QMessageBox(this);
             msgbox->information(this,"提示","密码或用户名错误，请重新输入！");
+            qDebug()<<"01";
           }
         else{
             QMessageBox *msgbox = new QMessageBox(this);
             msgbox->information(this,"提示","用户登录成功！");
+            File::LoadRecord(*mainreader,mainreader->GetRecord());
             Home* home = new Home;
             this->close();
             home->show();
@@ -61,7 +64,7 @@ void library::on_btn_login_clicked()
             QMessageBox *msgbox = new QMessageBox(this);
             msgbox->information(this,"提示","密码或用户名错误，请重新输入！");
           }
-        if(mainladmin->GetPsw() != ui->line_password->text().toStdString())
+        else if(mainladmin->GetPsw() != ui->line_password->text().toStdString())
           {
             ui->line_account->clear();
             ui->line_password->clear();

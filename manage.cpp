@@ -81,17 +81,23 @@ void Manage::on_btn_re_book_clicked()
     QString name[5];
     if(row!=-1)
       {
-        for(int i = 0;i < 5;i++)
+        for(int i = 1;i < 5;i++)
           {
             index = model3->index(row,i);
             name[i] = model3->data(index).toString();
           }
         index = model3->index(row,7);
         int tal = model3->data(index).toInt();
+        index = model3->index(row,6);
+        int left = model3->data(index).toInt();
+        index = model3->index(row,0);
+        string id = model3->data(index).toString().toStdString();
+        Book* re = Manager::FindBook(id);
         Re_book* reb = new Re_book;
-        reb->get(name[0],name[1],name[2],name[3],name[4],tal);
+        reb->get(re,name[1],name[2],name[3],name[4],left,tal);
         reb->setWindowModality(Qt::ApplicationModal);
         reb->show();
+
       }
 }
 
@@ -103,9 +109,12 @@ void Manage::on_btn_deletebook_clicked()
     if(row != -1)
       {
         string id = model3->data(index).toString().toStdString();
+//        qDebug()<<"123";
         Manager::RemoveBook(id);
+//        qDebug()<<"123";
         QMessageBox *msgbox = new QMessageBox(this);
         msgbox->information(this,"提示","删除成功！");
+        save();
       }
       on_btn_all_2_clicked();
 }
@@ -127,7 +136,7 @@ void Manage::on_btn_search_2_clicked()
                   string temp = b.GetBookName();
                   wstring w2_str = c2.strToWstr(temp);
                   if(temp.find(name) != temp.npos) {
-                      b.flag++;
+                      b.flag = 1;
                   }
               }
           }
@@ -135,6 +144,7 @@ void Manage::on_btn_search_2_clicked()
           for(Book &b : Manager::booklist) {
               if(b.flag != 0) {
                   showbookline3(&b,line++);
+                  b.flag = 0;
               }
           }
             }
@@ -150,7 +160,7 @@ void Manage::on_btn_search_2_clicked()
                 string temp = b.GetBookField();
                 wstring w2_str = c2.strToWstr(temp);
                 if(temp.find(field) != temp.npos) {
-                    b.flag++;
+                    b.flag = 1;
                 }
             }
         }
@@ -158,6 +168,7 @@ void Manage::on_btn_search_2_clicked()
         for(Book &b : Manager::booklist) {
             if(b.flag != 0) {
                 showbookline3(&b,line++);
+                b.flag = 0;
             }
           }
       }
@@ -173,7 +184,7 @@ void Manage::on_btn_search_2_clicked()
                     string temp = b.GetBookWriter();
                     wstring w2_str = c2.strToWstr(temp);
                     if(temp.find(writer) != temp.npos) {
-                        b.flag++;
+                        b.flag = 1;
                     }
                 }
             }
@@ -181,6 +192,7 @@ void Manage::on_btn_search_2_clicked()
             for(Book &b : Manager::booklist) {
                 if(b.flag != 0) {
                     showbookline3(&b,line++);
+                    b.flag = 0;
                 }
             }
       }
@@ -200,19 +212,19 @@ void Manage::on_btn_re_account_clicked()
     QModelIndex index;
     int sex = 1;
     QString name[3];
-    for(int i = 0;i < 2;i++)
-    {
-        index = model4->index(row,i);
-        name[i] = model4->data(index).toString();
-    }
+    index = model4->index(row,1);
+    name[1] = model4->data(index).toString();
     index = model4->index(row,3);
     name[2] = model4->data(index).toString();
-    index = model4->index(row,4);
+    index = model4->index(row,2);
     if(model4->data(index).toString() == "男")
       sex = 0;
     else sex = 1;
+    Reader* re;
+    index = model4->index(row,0);
+    re = Manager::FindReader(model4->data(index).toString().toStdString());
     Re_account* rea = new Re_account;
-    rea->get(name[0],name[1],sex,name[2]);
+    rea->get(re,name[1],sex,name[2]);
     rea->setWindowModality(Qt::ApplicationModal);
     rea->show();
 }
@@ -264,6 +276,8 @@ void Manage::on_btn_deleteaccount_clicked()
       Manager::RemoveReader(id);
       QMessageBox *msgbox = new QMessageBox(this);
       msgbox->information(this,"提示","删除成功！");
+      save();
+      on_btn_all_3_clicked();
     }
 }
 
@@ -280,19 +294,19 @@ void Manage::on_btn_reman_clicked()
   int sex;
   QModelIndex index;
   QString name[3];
-  for(int i = 0;i < 2;i++)
-  {
-      index = model5->index(row,i);
-      name[i] = model5->data(index).toString();
-  }
+  index = model5->index(row,1);
+  name[1] = model5->data(index).toString();
   index = model5->index(row,3);
   name[2] = model5->data(index).toString();
   index = model5->index(row,2);
   if(model5->data(index).toString() == "男")
     sex = 0;
   else sex = 1;
-  Re_account* rea = new Re_account;
-  rea->get(name[0],name[1],sex,name[2]);
+  index = model5->index(row,0);
+  Ladmin* lad;
+  lad = Manager::FindAdmin(model5->data(index).toString().toStdString());
+  Re_admin* rea = new Re_admin;
+  rea->get(lad,name[1],sex,name[2]);
   rea->setWindowModality(Qt::ApplicationModal);
   rea->show();
 }
@@ -308,6 +322,8 @@ void Manage::on_btn_deleteman_clicked()
       Manager::RemoveAdmin(id);
       QMessageBox *msgbox = new QMessageBox(this);
       msgbox->information(this,"提示","删除成功！");
+      save();
+      on_btn_all_clicked();
     }
 }
 
@@ -341,8 +357,8 @@ void Manage::showbookline3(Book* b,int i)
   QString day = QString::number(b->GetInDate().Rday());
   QString data = QString("%1/%2/%3").arg(year).arg(month).arg(day);
   model3->setItem(i,5,new QStandardItem(data));
-  model3->setItem(i,7,new QStandardItem(QString::number(b->GetBookLeftnum())));
-  model3->setItem(i,6,new QStandardItem(QString::number(b->GetBookTotalnum())));
+  model3->setItem(i,6,new QStandardItem(QString::number(b->GetBookLeftnum())));
+  model3->setItem(i,7,new QStandardItem(QString::number(b->GetBookTotalnum())));
 
 }
 
@@ -395,3 +411,19 @@ void Manage::on_btn_exit_clicked()
     rab->show();
     this->close();
 }
+
+void Manage::on_lineEdit_2_returnPressed()
+{
+    on_btn_search_2_clicked();
+}
+
+void Manage::on_lineEdit_4_returnPressed()
+{
+    on_btn_search_3_clicked();
+}
+
+void Manage::on_lineEdit_returnPressed()
+{
+    on_btn_search_clicked();
+}
+

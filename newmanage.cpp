@@ -29,7 +29,8 @@ void Newmanage::on_pushButton_clicked()
     {
       Manager::AddAdmin(ui->lineEdit->text().toStdString(),ui->lineEdit_4->text().toStdString(),ui->lineEdit_2->text().toStdString(),ui->comboBox->currentIndex());
       QMessageBox *msgbox = new QMessageBox(this);
-      msgbox->information(this,"提示","注册成功！");
+      msgbox->information(this,"提示","注册成功，请点击显示全表以查看！");
+      save();
       this->close();
 
     }

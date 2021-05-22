@@ -70,7 +70,7 @@ bool Reader::BorrowBook(string id) {
     Date m = n + 60;
     if(auto p = Manager::BorrowBook(id)) {
         flag = 1;
-        record.push_back(Bookrecord(p->GetBookID(),p->GetBookName(),p->GetBookWriter(),n.Ryear(),n.Rmonth(),n.Rday(),m.Ryear(),m.Rmonth(),m.Rday(),p->GetBookPublisher(),p->GetBookField()));
+        record.push_back(Bookrecord(p->GetBookID(),p->GetBookName(),p->GetBookWriter(),n.Ryear(),n.Rmonth(),n.Rday(),m.Ryear(),m.Rmonth(),m.Rday(),p->GetBookPublisher(),p->GetBookField(),int(record.size()+1)));
         m_borrow_number--;
     }
     return flag;
@@ -79,21 +79,23 @@ bool Reader::BorrowBook(string id) {
 void Reader::ShowRecord() {
     //cout << "id" <<" name " <<"writer" << "publisher" << endl;
     for(Bookrecord &r : record) {
-        /*cout << r.m_id << r.m_name << r.m_writer;
-        r.m_bdate.Display();
-        r.m_rdate.Display();*/
     }
 }
-bool Reader::ReturnBook() {
-    string id;
+bool Reader::ReturnBook(int no) {
     int flag = 0;
-    for(auto i = record.begin(); i != record.end(); i++) {
-        if(i->GetID() == id) {
+    for(auto i = record.begin(); i != record.end();) {
+        if(i->GetNo() == no) {
             flag = 1;
-            Manager::ReturnBook(id);
-            record.erase(i);
+            Manager::ReturnBook(i->GetID());
+            if(record.size() <= 1) {
+                record.pop_back();
+            } else {
+                i = record.erase(i);
+              }
             m_borrow_number++;
-        }
+        } else {
+            i++;
+          }
     }
     if(flag == 0) {
         //cout << "查不到此书的借阅信息" << endl;

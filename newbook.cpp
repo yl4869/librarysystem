@@ -26,6 +26,7 @@ void NewBook::on_btn_addbook_clicked()
                         ui->lineEdit_6->text().toInt(),
                         ui->lineEdit_5->text().toStdString());
     QMessageBox *msgbox = new QMessageBox(this);
-    msgbox->information(this,"提示","添加图书成功！");
+    msgbox->information(this,"提示","添加图书成功，请点击显示全表以查看！");
+    save();
     this->close();
 }

@@ -16,7 +16,7 @@ public:
     void SetAble();
     void SetNUmber();
     int m_no{};
-    bool ReturnBook();
+    bool ReturnBook(int no);
     bool BorrowBook(string id);
     bool FindBook(string);
     bool pay();

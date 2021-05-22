@@ -22,10 +22,16 @@ bool Manager::DeleteBook(Reader &r) {
     return 1;
 }
 bool Manager::DeleteRecord(Reader &r) {
-    for(auto i  =r.GetRecord().begin(); i!=r.GetRecord().end(); i++) {
+    for(auto i  =r.GetRecord().begin(); i!=r.GetRecord().end();) {
         if(i->GetOutdate() == 1) {
-            r.GetRecord().erase(i);
-        }
+            if(r.GetRecord().size() <=1 ) {
+                r.GetRecord().pop_back();
+            }else {
+                i = r.GetRecord().erase(i);
+            }
+        }else {
+            i++;
+          }
     }
     return 1;
 }
@@ -66,12 +72,17 @@ bool Manager::AddOldBook(string id,int num) {
 }
 bool Manager::RemoveBook(string id) {
     int flag = 0;
-    for(auto i = booklist.begin();i != booklist.end(); i++){
-        if( i->GetBookID() == id)
-        {
-            booklist.erase(i);
+    for(auto i  =booklist.begin(); i!=booklist.end();) {
+        if(i->GetBookID() == id) {
+            if(booklist.size() <=1 ) {
+                booklist.pop_back();
+            }else {
+                i = booklist.erase(i);
+            }
             flag = 1;
-        }
+        }else {
+            i++;
+          }
     }
     return flag;
 }
@@ -97,14 +108,28 @@ bool Manager::AddReader(string id, string name, string psw,int sex)
     return true;
 }
 bool Manager::RemoveReader(string id) {
-    int flag = 0;
-    for( auto i = readerlist.begin();i != readerlist.end();i++) {
-        if(i->GetID() == id) {
-            readerlist.erase(i);
-            flag = 1;
+//    int flag = 0;
+//    for( auto i = readerlist.begin();i != readerlist.end();i++) {
+//        if(i->GetID() == id) {
+//            readerlist.erase(i);
+//            flag = 1;
+//        }
+//    }
+//    return flag;
+  int flag = 0;
+  for(auto i  =readerlist.begin(); i!=readerlist.end();) {
+      if(i->GetID() == id) {
+          if(readerlist.size() <=1 ) {
+              readerlist.pop_back();
+          }else {
+              i = readerlist.erase(i);
+          }
+          flag = 1;
+      }else {
+          i++;
         }
-    }
-    return flag;
+  }
+  return flag;
 }
 Ladmin* Manager::FindAdmin(string id) {
     for(Ladmin &a : ladminlist)
@@ -117,14 +142,28 @@ Ladmin* Manager::FindAdmin(string id) {
     return nullptr;
 }
 bool Manager::RemoveAdmin(string id) {
-    int flag = 0;
-    for(auto i = ladminlist.begin(); i!=ladminlist.end(); i++) {
-        if(i->GetID() == id) {
-            ladminlist.erase(i);
-            flag = 1;
+//    int flag = 0;
+//    for(auto i = ladminlist.begin(); i!=ladminlist.end(); i++) {
+//        if(i->GetID() == id) {
+//            ladminlist.erase(i);
+//            flag = 1;
+//        }
+//    }
+//    return flag;
+  int flag = 0;
+  for(auto i  =ladminlist.begin(); i!=ladminlist.end();) {
+      if(i->GetID() == id) {
+          if(ladminlist.size() <=1 ) {
+              ladminlist.pop_back();
+          }else {
+              i = ladminlist.erase(i);
+          }
+          flag = 1;
+      }else {
+          i++;
         }
-    }
-    return flag;
+  }
+  return flag;
 }
 bool Manager::AddAdmin(string id, string name, string psw,int sex) {
     for(Ladmin & a : ladminlist) {
@@ -213,9 +252,7 @@ bool Manager::ResetAdminSex(string id, int sex) {
 void Manager::ReturnBook(string id) {
     for(Book &b : booklist) {
         if(b.GetBookID() == id){
-            //b.m_leftnum++;
             b.SetLeftnum(b.GetBookLeftnum()+1);
-            //cout << "还书成功" << endl;
         }
     }
 }

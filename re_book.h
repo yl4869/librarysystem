@@ -8,6 +8,7 @@
 #include "project/librarysystem/Manager.h"
 #include "cpp_re.h"
 #include <QMessageBox>
+#include "manage.h"
 namespace Ui {
 class Re_book;
 }
@@ -19,10 +20,10 @@ class Re_book : public QWidget
 public:
     explicit Re_book(QWidget *parent = nullptr);
     ~Re_book();
-    void get(QString a,QString b,QString c,QString d,QString e,int num);
+    void get(Book* re,QString a,QString b,QString c,QString d,int left,int tal);
 
 private slots:
-//    void on_btn_re_clicked();
+    void on_btn_re_clicked();
 
     void on_btn_rent_clicked();
 

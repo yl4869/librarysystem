@@ -28,7 +28,32 @@ Home::Home(QWidget *parent) :
     for(Book &b : Manager::booklist) {
           showbookline1(&b,i++);
         }
-
+    i = 0;
+    for(Bookrecord &b : mainreader->GetRecord()) {
+          showbookline2(&b,i++);
+        }
+    ui->lineEdit_2->setStyleSheet("background:transparent;border-width:0;border-style:outset");
+    ui->lineEdit_2->setReadOnly(true);
+    for(auto i = mainreader->GetRecord().begin();i!=mainreader->GetRecord().end(); i++) { i->CheckRecord(); }
+    mainreader->CheckRecord();
+    if(mainreader->GetNumber() == 0)
+      {
+        ui->lineEdit_2->setStyleSheet("color:red");//文本颜色
+        ui->lineEdit_2->setText("无借书份额，请先还书！");
+        ui->pushButton->hide();
+      }
+    else if(!mainreader->GetState())
+      {
+        ui->lineEdit_2->setStyleSheet("color:red");//文本颜色
+        ui->lineEdit_2->setText("请先交罚款！");
+        ui->pushButton->show();
+      }
+    else
+      {
+        ui->lineEdit_2->setStyleSheet("color:green");//文本颜色
+        ui->lineEdit_2->setText("可以借书");
+        ui->pushButton->hide();
+      }
 }
 
 Home::~Home()
@@ -40,6 +65,8 @@ Home::~Home()
 void Home::on_btn_ok_clicked()
 {
     int row = ui-> tableView_1 ->currentIndex().row();//获得当前行索引
+    for(auto i = mainreader->GetRecord().begin();i!=mainreader->GetRecord().end(); i++) { i->CheckRecord(); }
+    mainreader->CheckRecord();
     if(row!= -1)
       {
         QModelIndex index = model1->index(row,0);
@@ -56,7 +83,7 @@ void Home::on_btn_ok_clicked()
             QMessageBox *msgbox = new QMessageBox(this);
             msgbox->information(this,"提示","无借书份额，请先还书！");
         }else if(!mainreader->GetState())
-          {
+          {//qDebug()<<mainreader->GetState();
             QMessageBox *msgbox = new QMessageBox(this);
             msgbox->information(this,"提示","请先交罚款！");
           }
@@ -66,12 +93,37 @@ void Home::on_btn_ok_clicked()
             mainreader->CheckRecord();
             QMessageBox *msgbox = new QMessageBox(this);
             msgbox->information(this,"提示","借阅成功！");
+            int i = 0;
+            model1->removeRows(0,model1->rowCount());//清除
+            model2->removeRows(0,model2->rowCount());//清除
+            for(Book &b : Manager::booklist) {
+                showbookline1(&b,i++);
+              }
+            i = 0;
+            for(Bookrecord &b : mainreader->GetRecord()) {
+                  showbookline2(&b,i++);
+                }
+            save();
+            if(mainreader->GetNumber() == 0)
+              {
+                ui->lineEdit_2->setStyleSheet("color:red");//文本颜色
+                ui->lineEdit_2->setText("无借书份额，请先还书！");
+                ui->pushButton->hide();
+              }
+            else if(!mainreader->GetState())
+              {
+                ui->lineEdit_2->setStyleSheet("color:red");//文本颜色
+                ui->lineEdit_2->setText("请先交罚款！");
+                ui->pushButton->show();
+              }
+            else
+              {
+                ui->lineEdit_2->setStyleSheet("color:green");//文本颜色
+                ui->lineEdit_2->setText("可以借书");
+                ui->pushButton->hide();
+              }
           }
-        int i = 0;
-        model1->removeRows(0,model1->rowCount());//清除
-        for(Book &b : Manager::booklist) {
-            Home::showbookline1(&b,i++);
-          }
+
       }
 }
 
@@ -79,14 +131,48 @@ void Home::on_btn_ok_clicked()
 
 void Home::on_btn_back_clicked()
 {
+  for(auto i = mainreader->GetRecord().begin();i!=mainreader->GetRecord().end(); i++) { i->CheckRecord(); }
+  mainreader->CheckRecord();
     int row = ui-> tableView_2 ->currentIndex().row();//获得当前行索引
     if(row != -1)
       {
-        QModelIndex index = model2->index(row,0);
+        QModelIndex index = model2->index(row,7);
         QString id = model2->data(index).toString();
-        Manager::ReturnBook(id.toStdString());
+        mainreader->ReturnBook(id.toInt());
+        mainreader->CheckRecord();
         QMessageBox *msgbox = new QMessageBox(this);
         msgbox->information(this,"提示","还书成功！");
+        int i = 0;
+        model1->removeRows(0,model1->rowCount());//清除
+        model2->removeRows(0,model2->rowCount());//清除
+        for(Book &b : Manager::booklist) {
+            showbookline1(&b,i++);
+          }
+        i = 0;
+        for(Bookrecord &b : mainreader->GetRecord()) {
+              showbookline2(&b,i++);
+            }
+        save();
+
+
+        if(mainreader->GetNumber() == 0)
+          {
+            ui->lineEdit_2->setStyleSheet("color:red");//文本颜色
+            ui->lineEdit_2->setText("无借书份额，请先还书！");
+            ui->pushButton->hide();
+          }
+        else if(!mainreader->GetState())
+          {
+            ui->lineEdit_2->setStyleSheet("color:red");//文本颜色
+            ui->lineEdit_2->setText("请先交罚款！");
+            ui->pushButton->show();
+          }
+        else
+          {
+            ui->lineEdit_2->setStyleSheet("color:green");//文本颜色
+            ui->lineEdit_2->setText("可以借书");
+            ui->pushButton->hide();
+          }
       }
 
 
@@ -118,7 +204,7 @@ void Home::on_btn_search_clicked()
                   string temp = b.GetBookName();
                   wstring w2_str = c2.strToWstr(temp);
                   if(temp.find(name) != temp.npos) {
-                      b.flag++;
+                      b.flag = 1;
                   }
               }
           }
@@ -126,6 +212,7 @@ void Home::on_btn_search_clicked()
           for(Book &b : Manager::booklist) {
               if(b.flag != 0) {
                   showbookline1(&b,line++);
+                  b.flag = 0;
               }
           }
             }
@@ -141,7 +228,7 @@ void Home::on_btn_search_clicked()
                 string temp = b.GetBookField();
                 wstring w2_str = c2.strToWstr(temp);
                 if(temp.find(field) != temp.npos) {
-                    b.flag++;
+                    b.flag = 1;
                 }
             }
         }
@@ -149,6 +236,7 @@ void Home::on_btn_search_clicked()
         for(Book &b : Manager::booklist) {
             if(b.flag != 0) {
                 showbookline1(&b,line++);
+                b.flag = 0;
             }
           }
       }
@@ -164,7 +252,7 @@ void Home::on_btn_search_clicked()
                     string temp = b.GetBookWriter();
                     wstring w2_str = c2.strToWstr(temp);
                     if(temp.find(writer) != temp.npos) {
-                        b.flag++;
+                        b.flag = 1;
                     }
                 }
             }
@@ -172,6 +260,7 @@ void Home::on_btn_search_clicked()
             for(Book &b : Manager::booklist) {
                 if(b.flag != 0) {
                     showbookline1(&b,line++);
+                    b.flag = 0;
                 }
             }
       }
@@ -209,7 +298,8 @@ void Home::showbookline2(Bookrecord *b, int i)
   QString rdata = QString("%1/%2/%3").arg(ryear).arg(rmonth).arg(rday);
   model2->setItem(i,5,new QStandardItem(bdata));
   model2->setItem(i,6,new QStandardItem(rdata));
-
+  model2->setItem(i,7,new QStandardItem(QString::number(b->GetNo())));
+  ui->tableView_2->setColumnHidden(7,true);
 
 }
 
@@ -218,4 +308,50 @@ void Home::on_btn_exit_clicked()
     this->close();
     library* lab = new library;
     lab->show();
+}
+
+void Home::on_lineEdit_returnPressed()
+{
+    on_btn_search_clicked();
+}
+
+
+void Home::on_pushButton_clicked()
+{
+    mainreader->pay();
+    save();
+    ui->pushButton->hide();
+    for(auto i = mainreader->GetRecord().begin();i!=mainreader->GetRecord().end(); i++) { i->CheckRecord(); }
+    mainreader->CheckRecord();
+    if(mainreader->GetNumber() == 0)
+      {
+        ui->lineEdit_2->setStyleSheet("color:red");//文本颜色
+        ui->lineEdit_2->setText("无借书份额，请先还书！");
+        ui->pushButton->hide();
+      }
+    else if(!mainreader->GetState())
+      {
+        ui->lineEdit_2->setStyleSheet("color:red");//文本颜色
+        ui->lineEdit_2->setText("请先交罚款！");
+        ui->pushButton->show();
+      }
+    else
+      {
+        ui->lineEdit_2->setStyleSheet("color:green");//文本颜色
+        ui->lineEdit_2->setText("可以借书");
+        ui->pushButton->hide();
+      }
+    model1->removeRows(0,model1->rowCount());//清除
+    model2->removeRows(0,model2->rowCount());//清除
+    int line = 0;
+    for(Book &b : Manager::booklist) {
+          showbookline1(&b,line++);
+        }
+    line = 0;
+    for(Bookrecord &b : mainreader->GetRecord()) {
+          showbookline2(&b,line++);
+        }
+    QMessageBox *msgbox = new QMessageBox(this);
+    msgbox->information(this,"提示","还款成功！");
+
 }

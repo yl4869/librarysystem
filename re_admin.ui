@@ -21,23 +21,14 @@
      </property>
     </widget>
    </item>
-   <item row="1" column="0">
-    <widget class="QWidget" name="widget" native="true">
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <item>
-       <widget class="QLabel" name="label_2">
-        <property name="text">
-         <string>账号</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="lineEdit"/>
-      </item>
-     </layout>
+   <item row="4" column="0">
+    <widget class="QPushButton" name="pushButton">
+     <property name="text">
+      <string>确认修改</string>
+     </property>
     </widget>
    </item>
-   <item row="2" column="0">
+   <item row="1" column="0">
     <widget class="QWidget" name="widget_2" native="true">
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
@@ -53,7 +44,7 @@
      </layout>
     </widget>
    </item>
-   <item row="3" column="0">
+   <item row="2" column="0">
     <widget class="QWidget" name="widget_4" native="true">
      <layout class="QHBoxLayout" name="horizontalLayout_4">
       <item>
@@ -80,7 +71,7 @@
      </layout>
     </widget>
    </item>
-   <item row="4" column="0">
+   <item row="3" column="0">
     <widget class="QWidget" name="widget_3" native="true">
      <layout class="QHBoxLayout" name="horizontalLayout_3">
       <item>
@@ -91,16 +82,9 @@
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_3"/>
+       <widget class="QLineEdit" name="lineEdit_4"/>
       </item>
      </layout>
-    </widget>
-   </item>
-   <item row="5" column="0">
-    <widget class="QPushButton" name="pushButton">
-     <property name="text">
-      <string>确认修改</string>
-     </property>
     </widget>
    </item>
   </layout>
