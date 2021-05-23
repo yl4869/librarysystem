@@ -12,7 +12,8 @@
 using namespace std;
 vector<Bookrecord>& Reader::GetRecord() {return this->record; }
 Reader::Reader(string id, string name, string psw,int sex):User(id,name,psw,sex) {
-    this->SetAble();
+    User *p = this;
+    p->SetAble();
     this->SetNUmber();
 }
 Reader::Reader()= default;

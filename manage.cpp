@@ -333,10 +333,18 @@ void Manage::on_btn_search_clicked()
   ladmin0 = Manager::FindAdmin(ui->lineEdit->text().toStdString());
     if(ladmin0 != NULL)
           {
-            model5->removeRows(0,model3->rowCount());//清除
-            model5->setItem(0,1,new QStandardItem(QString::fromStdString(ladmin0->GetID())));
-            model5->setItem(0,2,new QStandardItem(QString::fromStdString(ladmin0->GetName())));
-            model5->setItem(0,4,new QStandardItem(QString::fromStdString(ladmin0->GetPsw())));
+            model5->removeRows(0,model5->rowCount());//清除
+            model5->setItem(0,0,new QStandardItem(QString::fromStdString(ladmin0->GetID())));
+            model5->setItem(0,1,new QStandardItem(QString::fromStdString(ladmin0->GetName())));
+            model5->setItem(0,3,new QStandardItem(QString::fromStdString(ladmin0->GetPsw())));
+            if(ladmin0->GetSex() == 0)
+              {
+                 model5->setItem(0,2,new QStandardItem("男"));
+              }
+            else
+              {
+                model5->setItem(0,2,new QStandardItem("女"));
+              }
           }
         else
           {

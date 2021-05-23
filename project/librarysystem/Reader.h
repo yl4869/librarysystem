@@ -15,6 +15,7 @@ public:
     vector<Bookrecord>& GetRecord();
     void SetAble();
     void SetNUmber();
+    string GetID();
     int m_no{};
     bool ReturnBook(int no);
     bool BorrowBook(string id);

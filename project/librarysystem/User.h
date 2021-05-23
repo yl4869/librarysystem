@@ -10,6 +10,7 @@ private:
     string m_psw;
     int m_sex;
 public:
+    virtual void SetAble() = 0;
     User();
     User(string id,string name,string psw,int sex);
     ~User();
